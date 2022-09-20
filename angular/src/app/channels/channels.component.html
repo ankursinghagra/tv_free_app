@@ -1,0 +1,24 @@
+<nav class="navbar bg-dark navbar-dark">
+  <div class="left-nav-area">
+  	<a (click)="this._location.back();"><i class="fa fa-angle-left"></i></a>
+  </div>
+  <div class="center-nav-area">
+  	<h4>SupTube</h4>
+  </div>
+  <div class="right-nav-area">
+  	<a routerLink="/info/"><i class="fa fa-info-circle"></i></a>
+	</div>
+</nav>
+<br>
+<div class="container-fluid list_area">
+	<div class="row">
+		<div class="col-12">
+			<div *ngIf="loading" class="text-center">
+				<i class="fa fa-spinner fa-spin fa-2x"></i>
+			</div>
+		</div>
+		<div *ngFor="let channel of channels" class="channel-link col-6">
+			<div (click)="this.view_video(channel)" class="">{{channel.name}}</div>
+		</div>	
+	</div>
+</div>

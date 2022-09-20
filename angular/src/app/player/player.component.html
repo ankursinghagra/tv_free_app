@@ -1,0 +1,31 @@
+<nav class="navbar bg-dark navbar-dark">
+  <div class="left-nav-area">
+  	<a (click)="this._location.back();"><i class="fa fa-angle-left"></i></a>
+  </div>
+  <div class="center-nav-area">
+  	<h4>SupTube</h4>
+  </div>
+  <div class="right-nav-area">
+  	<a routerLink="/info/"><i class="fa fa-info-circle"></i></a>
+	</div>
+</nav>
+<div class="container-fluid video_area">
+	<div class="row">
+		<video id='sxmvideo' class="video-js vjs-default-skin" controls>
+		  	<source
+		     src="{{this.video_array.m3u8}}"
+		     type="application/x-mpegURL">
+		</video>
+	</div>
+</div>
+<br><br>
+<div class="container-fluid video_info_area">
+	<div class="row">
+		<div class="col-4">
+			<img src="{{this.video_array.logo}}" class="img-fluid" *ngIf="this.video_array.logo?.length > 0" style="max-width: 200px;">
+		</div>
+		<div class="col-8 text-right">
+			<h4 *ngIf="this.video_array.name?.length > 0">{{this.video_array.name}}</h4> 
+		</div>
+	</div>
+</div>

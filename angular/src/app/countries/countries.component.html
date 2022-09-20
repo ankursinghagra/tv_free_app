@@ -1,0 +1,21 @@
+<nav class="navbar bg-dark navbar-dark">
+  <div class="left-nav-area">
+  </div>
+  <div class="center-nav-area">
+  	<h4>SupTube</h4>
+  </div>
+  <div class="right-nav-area">
+  	<a routerLink="/info/"><i class="fa fa-info-circle"></i></a>
+	</div>
+</nav>
+<br>
+<div class="container-fluid">
+	<div *ngIf="countries?.length == 0">
+		Loading .. 
+	</div>
+	<div class="row" *ngIf="countries?.length > 0">
+		<div *ngFor="let country of countries" class="country-link col-6">
+			<a routerLink="/channels/{{country.code}}" (click)="this._baseService.set_country(country)" class=" btn btn-info btn-block">{{country.name}}</a>
+		</div>
+	</div>
+</div>
